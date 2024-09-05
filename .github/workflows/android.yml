@@ -32,6 +32,9 @@ jobs:
         run: yarn install --immutable-cache --check-cache || yarn install
         working-directory: ./
 
+      - name: Grant execute permission for Gradle wrapper
+        run: chmod +x ./gradlew
+
       - name: Build Android Release APK
         run: |
           cd android && ./gradlew assembleRelease
