@@ -32,6 +32,10 @@ jobs:
         run: yarn install --immutable-cache --check-cache || yarn install
         working-directory: ./
 
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./
+
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
         working-directory: android
