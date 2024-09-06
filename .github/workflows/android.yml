@@ -42,6 +42,10 @@ jobs:
         run: chmod +x ./gradlew
         working-directory: android
 
+      - name: Clean Build Environment
+        run: ./gradlew clean
+        working-directory: android
+
       - name: Build Android Release APK
         run: |
           cd android && ./gradlew assembleRelease
