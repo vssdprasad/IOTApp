@@ -49,16 +49,16 @@ jobs:
           build-tools: 30.0.3
 
       - name: Grant execute permission for Gradle wrapper
-        run: chmod +x android/gradlew
-        working-directory: ./
+        run: chmod +x ./gradlew
+        working-directory: android
   
       - name: Clean Build Environment
-        run: android/gradlew clean
-        working-directory: ./
+        run: ./gradlew clean
+        working-directory: android
   
       - name: Build Android Release APK
-        run: android/gradlew assembleRelease
-        working-directory: ./
+        run: ./gradlew assembleRelease
+        working-directory: android
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
