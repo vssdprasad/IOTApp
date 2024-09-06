@@ -37,6 +37,12 @@ jobs:
       - name: Print React Native Config
         run: npx react-native config
         working-directory: ./
+      
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 30
+          build-tools: 30.0.3
 
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x ./gradlew
