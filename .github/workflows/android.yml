@@ -55,6 +55,11 @@ jobs:
       - name: Clean Build Environment
         run: ./gradlew clean
         working-directory: android
+
+      - name: Generate autolinking package list
+        run: |
+          cd android
+          ./gradlew generateAutolinkingPackageList
   
       - name: Build Android Release APK
         run: ./gradlew assembleRelease
