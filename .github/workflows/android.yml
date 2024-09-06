@@ -28,9 +28,7 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Install dependencies
-        run: yarn install --immutable-cache --check-cache || yarn install
-        working-directory: ./
+     
 
       - name: Install dependencies
         run: npm install
