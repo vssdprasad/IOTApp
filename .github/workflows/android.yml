@@ -37,6 +37,10 @@ jobs:
       - name: Print React Native Config
         run: npx react-native config
         working-directory: ./
+
+      - name: Verify react-native.config.js
+        run: cat react-native.config.js
+        working-directory: ./
       
       - name: Set up Android SDK
         uses: android-actions/setup-android@v2
